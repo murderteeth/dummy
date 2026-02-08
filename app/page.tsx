@@ -16,6 +16,25 @@ export default function Home() {
       {/* Cracked glass overlay */}
       <div className="absolute inset-0 crack-overlay" />
 
+      {/* Bullet hole */}
+      <div className="bullet-hole top-[20%] left-[15%]">
+        <div className="bullet-cracks">
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+        </div>
+      </div>
+
       {/* Top hazard stripe */}
       <div className="absolute top-0 left-0 right-0 h-2 hazard-stripes" />
 
