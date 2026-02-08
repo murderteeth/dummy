@@ -283,3 +283,112 @@ body {
     0 0 20px rgba(239, 68, 68, 0.2),
     inset 0 0 10px rgba(239, 68, 68, 0.1);
 }
+
+/* ============================================
+   BULLET HOLE
+   ============================================ */
+
+.bullet-hole {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  pointer-events: none;
+}
+
+/* Dark center hole */
+.bullet-hole::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(
+    circle,
+    #000 0%,
+    #000 50%,
+    #111 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow:
+    0 0 0 2px rgba(30, 30, 30, 0.8),
+    0 0 0 4px rgba(50, 50, 50, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Shattered glass ring around hole */
+.bullet-hole::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle,
+    transparent 20%,
+    rgba(255, 255, 255, 0.05) 25%,
+    rgba(255, 255, 255, 0.1) 30%,
+    transparent 40%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Radiating cracks container */
+.bullet-cracks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+/* Individual crack lines */
+.bullet-crack {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.15) 30%,
+    rgba(255, 255, 255, 0.05) 70%,
+    transparent 100%
+  );
+}
+
+.bullet-crack:nth-child(1) { width: 55px; transform: rotate(15deg); }
+.bullet-crack:nth-child(2) { width: 48px; transform: rotate(55deg); }
+.bullet-crack:nth-child(3) { width: 52px; transform: rotate(95deg); }
+.bullet-crack:nth-child(4) { width: 45px; transform: rotate(135deg); }
+.bullet-crack:nth-child(5) { width: 58px; transform: rotate(175deg); }
+.bullet-crack:nth-child(6) { width: 50px; transform: rotate(215deg); }
+.bullet-crack:nth-child(7) { width: 47px; transform: rotate(260deg); }
+.bullet-crack:nth-child(8) { width: 53px; transform: rotate(310deg); }
+
+/* Secondary smaller cracks (forked) */
+.bullet-crack-secondary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.05) 60%,
+    transparent 100%
+  );
+}
+
+.bullet-crack-secondary:nth-child(9) { width: 25px; transform: translate(35px, -8px) rotate(35deg); }
+.bullet-crack-secondary:nth-child(10) { width: 22px; transform: translate(30px, 5px) rotate(75deg); }
+.bullet-crack-secondary:nth-child(11) { width: 28px; transform: translate(28px, -3px) rotate(155deg); }
+.bullet-crack-secondary:nth-child(12) { width: 20px; transform: translate(32px, 6px) rotate(235deg); }
+.bullet-crack-secondary:nth-child(13) { width: 24px; transform: translate(25px, -5px) rotate(285deg); }
