@@ -3,24 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
-  }
+  --warning: #FACC15;
+  --dark: #0A0A0A;
+  --accent: #F97316;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: var(--dark);
+  color: white;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Hazard stripes pattern */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--warning),
+    var(--warning) 10px,
+    var(--dark) 10px,
+    var(--dark) 20px
+  );
+}
+
+/* Impact burst effect */
+.impact-burst {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(250, 204, 21, 0.15) 0%,
+    rgba(250, 204, 21, 0.05) 40%,
+    transparent 70%
+  );
+}
+
+/* Scan line overlay */
+.scan-lines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.02) 2px,
+    rgba(255, 255, 255, 0.02) 4px
+  );
+  pointer-events: none;
+}
+
+/* Grid overlay */
+.grid-overlay {
+  background-image: 
+    linear-gradient(rgba(250, 204, 21, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 204, 21, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
   }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Text glow */
+.text-glow {
+  text-shadow: 
+    0 0 20px rgba(250, 204, 21, 0.5),
+    0 0 40px rgba(250, 204, 21, 0.3),
+    0 0 60px rgba(250, 204, 21, 0.1);
 }
