@@ -16,6 +16,21 @@ export default function Home() {
       {/* Cracked glass overlay */}
       <div className="absolute inset-0 crack-overlay" />
 
+      {/* ============================================
+          GRAFFITI - UR MOM
+          ============================================ */}
+      
+      <div className="graffiti-tag bottom-[18%] left-[8%] -rotate-6">
+        <span className="bubble-letter" style={{ '--hue': '320' } as React.CSSProperties}>R</span>
+        <span className="bubble-letter" style={{ '--hue': '280' } as React.CSSProperties}>E</span>
+        <span className="bubble-letter" style={{ '--hue': '180' } as React.CSSProperties}>K</span>
+        <span className="bubble-letter" style={{ '--hue': '60' } as React.CSSProperties}>T</span>
+      </div>
+
+      {/* ============================================
+          ORIGINAL DAMAGE ELEMENTS
+          ============================================ */}
+
       {/* Bullet hole */}
       <div className="bullet-hole top-[20%] left-[15%]">
         <div className="bullet-cracks">

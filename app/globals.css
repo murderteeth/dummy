@@ -589,3 +589,62 @@ body {
   border-color: rgba(239, 68, 68, 0.5);
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
 }
+
+/* ============================================
+   BUBBLE LETTER GRAFFITI
+   ============================================ */
+
+.graffiti-tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bubble-letter {
+  font-family: 'Arial Black', 'Helvetica Bold', sans-serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: hsl(var(--hue, 320), 80%, 60%);
+  text-shadow:
+    /* Outline */
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000,
+    /* Thick black stroke */
+    -4px 0 0 #000,
+    4px 0 0 #000,
+    0 -4px 0 #000,
+    0 4px 0 #000,
+    /* Puffy highlight */
+    -1px -1px 0 hsl(var(--hue, 320), 80%, 75%),
+    /* Drop shadow */
+    6px 6px 0 rgba(0, 0, 0, 0.5);
+  transform: skewX(-5deg);
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Add slight variation to each letter */
+.bubble-letter:nth-child(odd) {
+  transform: skewX(-5deg) translateY(-3px);
+}
+
+.bubble-letter:nth-child(even) {
+  transform: skewX(-5deg) translateY(3px);
+}
+
+/* Subtle shine effect */
+.bubble-letter::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
