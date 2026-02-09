@@ -17,7 +17,62 @@ export default function Home() {
       <div className="absolute inset-0 crack-overlay" />
 
       {/* ============================================
-          GRAFFITI - UR MOM
+          COFFEE STAIN
+          ============================================ */}
+      
+      <div className="coffee-stain top-[8%] right-[15%] rotate-12">
+        <svg viewBox="0 0 200 200" className="w-full h-full">
+          <defs>
+            {/* Filter for organic edge texture */}
+            <filter id="coffee-texture" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            {/* Radial gradient for ring effect */}
+            <radialGradient id="coffee-ring" cx="50%" cy="50%" r="50%">
+              <stop offset="70%" stopColor="transparent"/>
+              <stop offset="78%" stopColor="rgba(101, 67, 33, 0.6)"/>
+              <stop offset="85%" stopColor="rgba(139, 90, 43, 0.8)"/>
+              <stop offset="92%" stopColor="rgba(101, 67, 33, 0.5)"/>
+              <stop offset="100%" stopColor="transparent"/>
+            </radialGradient>
+            {/* Inner stain gradient */}
+            <radialGradient id="coffee-inner" cx="45%" cy="55%" r="45%">
+              <stop offset="0%" stopColor="rgba(139, 90, 43, 0.3)"/>
+              <stop offset="50%" stopColor="rgba(101, 67, 33, 0.15)"/>
+              <stop offset="100%" stopColor="transparent"/>
+            </radialGradient>
+          </defs>
+          {/* Main ring */}
+          <ellipse cx="100" cy="100" rx="85" ry="80" fill="url(#coffee-ring)" filter="url(#coffee-texture)"/>
+          {/* Inner stain */}
+          <ellipse cx="95" cy="105" rx="60" ry="55" fill="url(#coffee-inner)" filter="url(#coffee-texture)"/>
+          {/* Darker edge details */}
+          <ellipse cx="100" cy="100" rx="82" ry="77" fill="none" stroke="rgba(80, 50, 20, 0.4)" strokeWidth="3" filter="url(#coffee-texture)"/>
+        </svg>
+      </div>
+
+      {/* Secondary smaller coffee ring */}
+      <div className="coffee-stain-small bottom-[25%] right-[5%] -rotate-6">
+        <svg viewBox="0 0 100 100" className="w-full h-full">
+          <defs>
+            <filter id="coffee-texture-sm" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <radialGradient id="coffee-ring-sm" cx="50%" cy="50%" r="50%">
+              <stop offset="65%" stopColor="transparent"/>
+              <stop offset="75%" stopColor="rgba(101, 67, 33, 0.5)"/>
+              <stop offset="88%" stopColor="rgba(139, 90, 43, 0.7)"/>
+              <stop offset="100%" stopColor="transparent"/>
+            </radialGradient>
+          </defs>
+          <circle cx="50" cy="50" r="42" fill="url(#coffee-ring-sm)" filter="url(#coffee-texture-sm)"/>
+        </svg>
+      </div>
+
+      {/* ============================================
+          GRAFFITI - REKT
           ============================================ */}
       
       <div className="graffiti-tag bottom-[18%] left-[8%] -rotate-6">
