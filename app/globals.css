@@ -392,3 +392,200 @@ body {
 .bullet-crack-secondary:nth-child(11) { width: 28px; transform: translate(28px, -3px) rotate(155deg); }
 .bullet-crack-secondary:nth-child(12) { width: 20px; transform: translate(32px, 6px) rotate(235deg); }
 .bullet-crack-secondary:nth-child(13) { width: 24px; transform: translate(25px, -5px) rotate(285deg); }
+
+/* ============================================
+   LEAKED DOCUMENTS / CLASSIFIED
+   ============================================ */
+
+/* Classified stamps */
+.classified-stamp {
+  position: absolute;
+  padding: 8px 16px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: #ef4444;
+  border: 3px solid #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  opacity: 0.6;
+  pointer-events: none;
+  animation: stamp-flicker 3s infinite;
+}
+
+.classified-stamp::before {
+  content: '★';
+  margin-right: 8px;
+}
+
+.classified-stamp::after {
+  content: '★';
+  margin-left: 8px;
+}
+
+@keyframes stamp-flicker {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.4; }
+  52% { opacity: 0.7; }
+  54% { opacity: 0.5; }
+}
+
+/* Document fragments */
+.document-fragment {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(15, 15, 15, 0.95) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(239, 68, 68, 0.5);
+  padding: 16px;
+  font-family: monospace;
+  font-size: 12px;
+  color: #a1a1aa;
+  position: relative;
+  overflow: hidden;
+}
+
+.document-fragment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, transparent 50%, rgba(239, 68, 68, 0.1) 50%);
+}
+
+.document-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #71717a;
+}
+
+.document-body {
+  line-height: 1.6;
+}
+
+.document-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 10px;
+  color: #52525b;
+}
+
+/* Redacted text - reveals on hover */
+.redacted {
+  background: #ef4444;
+  color: #ef4444;
+  padding: 0 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.redacted:hover {
+  background: transparent;
+  color: #22c55e;
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.redacted::before {
+  content: attr(data-reveal);
+  position: absolute;
+  opacity: 0;
+  color: #22c55e;
+  pointer-events: none;
+}
+
+/* Inline redacted (no hover reveal) */
+.redacted-inline {
+  background: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 0 2px;
+}
+
+/* Terminal window */
+.terminal-window {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(239, 68, 68, 0.1);
+}
+
+.terminal-header {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.terminal-title {
+  font-family: monospace;
+  font-size: 11px;
+  color: #71717a;
+  flex: 1;
+  text-align: center;
+}
+
+.terminal-body {
+  padding: 16px;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.terminal-scroll {
+  animation: terminal-scroll 20s linear infinite;
+}
+
+@keyframes terminal-scroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Blinking cursor */
+.blink-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Data chips */
+.data-chip {
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #71717a;
+}
+
+.data-chip:hover {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}

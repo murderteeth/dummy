@@ -38,10 +38,26 @@ export default function Home() {
       {/* Top hazard stripe */}
       <div className="absolute top-0 left-0 right-0 h-2 hazard-stripes" />
 
+      {/* CLASSIFIED stamps scattered */}
+      <div className="classified-stamp top-[12%] right-[20%] -rotate-12">
+        CLASSIFIED
+      </div>
+      <div className="classified-stamp top-[65%] left-[8%] rotate-6">
+        TOP SECRET
+      </div>
+      <div className="classified-stamp bottom-[15%] right-[12%] -rotate-3">
+        EYES ONLY
+      </div>
+
       {/* Damage badge */}
       <div className="absolute top-8 right-8 flex items-center gap-2 px-3 py-1.5 border border-red-500/50 bg-red-500/10 rounded font-mono text-xs text-red-400 uppercase tracking-wider danger-glow">
         <span className="w-2 h-2 rounded-full bg-red-500 pulse-danger" />
         System Damaged
+      </div>
+
+      {/* Document ID badge */}
+      <div className="absolute top-8 left-8 px-3 py-1.5 border border-zinc-700 bg-zinc-900/80 rounded font-mono text-xs text-zinc-500">
+        DOC_ID: <span className="text-red-500">[EXPUNGED]</span>
       </div>
 
       {/* Main content with flicker */}
@@ -65,6 +81,102 @@ export default function Home() {
         </p>
       </div>
 
+      {/* Leaked Documents Section */}
+      <div className="relative z-10 mt-16 w-full max-w-4xl px-4">
+        <div className="text-xs font-mono text-red-500/60 uppercase tracking-widest mb-4 text-center">
+          ▼ LEAKED DOCUMENTS ▼
+        </div>
+        
+        {/* Document fragments grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Redacted document fragment 1 */}
+          <div className="document-fragment">
+            <div className="document-header">
+              <span>MEMO // INTERNAL</span>
+              <span className="text-red-500">LEVEL 5</span>
+            </div>
+            <div className="document-body">
+              <p>Subject: <span className="redacted" data-reveal="Project ICARUS">████████████</span></p>
+              <p className="mt-2">
+                The <span className="redacted" data-reveal="test subjects">████████</span> have shown 
+                <span className="redacted" data-reveal="unexpected sentience">████████████████</span> in recent trials.
+              </p>
+              <p className="mt-2">
+                Recommend immediate <span className="redacted" data-reveal="termination">███████████</span> of all
+                <span className="redacted" data-reveal="evidence">████████</span>.
+              </p>
+            </div>
+            <div className="document-footer">
+              AUTH: <span className="redacted" data-reveal="DR. SMITH">██████████</span>
+            </div>
+          </div>
+
+          {/* Redacted document fragment 2 */}
+          <div className="document-fragment">
+            <div className="document-header">
+              <span>INCIDENT REPORT #2847</span>
+              <span className="text-amber-500">RESTRICTED</span>
+            </div>
+            <div className="document-body">
+              <p>Location: <span className="redacted" data-reveal="Site 19-B">██████████</span></p>
+              <p className="mt-2">
+                At <span className="redacted" data-reveal="03:47 AM">████████</span>, containment breach detected in
+                <span className="redacted" data-reveal="Sector 7G">██████████</span>.
+              </p>
+              <p className="mt-2">
+                Casualties: <span className="redacted" data-reveal="47 personnel">████████████</span>
+              </p>
+              <p className="mt-1 text-red-500/80 text-xs">
+                [REMAINDER OF FILE CORRUPTED]
+              </p>
+            </div>
+            <div className="document-footer">
+              STATUS: <span className="text-red-500">UNRESOLVED</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Terminal with leaked logs */}
+        <div className="mt-6 terminal-window">
+          <div className="terminal-header">
+            <div className="terminal-buttons">
+              <span className="terminal-btn bg-red-500" />
+              <span className="terminal-btn bg-yellow-500" />
+              <span className="terminal-btn bg-green-500" />
+            </div>
+            <span className="terminal-title">access.log — INTERCEPTED</span>
+          </div>
+          <div className="terminal-body">
+            <div className="terminal-scroll">
+              <p><span className="text-zinc-500">[2024-01-15 03:22:17]</span> <span className="text-red-400">WARN</span> Unauthorized access attempt from <span className="text-cyan-400">192.168.███.███</span></p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:18]</span> <span className="text-amber-400">INFO</span> Firewall bypass detected — <span className="text-red-400">RULE_VIOLATION</span></p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:19]</span> <span className="text-green-400">AUTH</span> User <span className="redacted-inline">admin_████</span> elevated to ROOT</p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:21]</span> <span className="text-red-400">CRIT</span> Database dump initiated: <span className="text-cyan-400">users.db</span>, <span className="text-cyan-400">secrets.db</span></p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:23]</span> <span className="text-amber-400">INFO</span> Exfiltrating to <span className="redacted-inline">███.███.██.█</span></p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:25]</span> <span className="text-red-400">ALERT</span> ██████████ BREACH DETECTED ██████████</p>
+              <p><span className="text-zinc-500">[2024-01-15 03:22:26]</span> <span className="text-zinc-600">[CONNECTION LOST]</span></p>
+              <p className="text-red-500 blink-cursor">█</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Scattered data fragments */}
+        <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs font-mono">
+          <div className="data-chip">
+            API_KEY: <span className="redacted-inline">sk-████████████████</span>
+          </div>
+          <div className="data-chip">
+            PASSWORD: <span className="redacted-inline">hunter████</span>
+          </div>
+          <div className="data-chip text-red-400">
+            CLEARANCE: REVOKED
+          </div>
+          <div className="data-chip">
+            COORDINATES: <span className="redacted-inline">██.████°N</span>
+          </div>
+        </div>
+      </div>
+
       {/* Bottom hazard stripe */}
       <div className="absolute bottom-0 left-0 right-0 h-2 hazard-stripes" />
 
@@ -73,6 +185,11 @@ export default function Home() {
       <div className="absolute top-4 right-4 w-8 h-8 border-r-2 border-t-2 border-warning/20 corner-damaged-tr" />
       <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-warning/20 corner-damaged-bl" />
       <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-warning/20 corner-damaged-br" />
+
+      {/* Footer warning */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-zinc-700 uppercase tracking-widest">
+        Unauthorized access is being monitored
+      </div>
     </main>
   );
 }
