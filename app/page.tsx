@@ -105,6 +105,25 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Second bullet hole */}
+      <div className="bullet-hole top-[35%] right-[10%]">
+        <div className="bullet-cracks">
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+          <div className="bullet-crack-secondary" />
+        </div>
+      </div>
+
       {/* Top hazard stripe */}
       <div className="absolute top-0 left-0 right-0 h-2 hazard-stripes" />
 
