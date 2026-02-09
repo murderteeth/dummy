@@ -16,6 +16,107 @@ export default function Home() {
       {/* Cracked glass overlay */}
       <div className="absolute inset-0 crack-overlay" />
 
+      {/* ============================================
+          STENCIL GRAFFITI
+          ============================================ */}
+      
+      {/* Hooded hacker stencil - bottom left */}
+      <div className="stencil-art bottom-[15%] left-[5%] w-32 h-40 opacity-60">
+        <svg viewBox="0 0 100 120" className="w-full h-full stencil-figure">
+          {/* Hoodie silhouette */}
+          <path d="M50 10 C30 10 20 25 20 40 L20 50 C20 55 25 60 30 62 L30 100 L70 100 L70 62 C75 60 80 55 80 50 L80 40 C80 25 70 10 50 10" fill="currentColor"/>
+          {/* Hood opening/face shadow */}
+          <ellipse cx="50" cy="35" rx="18" ry="15" fill="#0a0a0a"/>
+          {/* Laptop glow */}
+          <rect x="25" y="85" width="50" height="5" fill="#22c55e" opacity="0.8"/>
+          <rect x="30" y="75" width="40" height="12" fill="#0a0a0a" stroke="currentColor" strokeWidth="2"/>
+          {/* Screen glow reflection on face */}
+          <ellipse cx="50" cy="38" rx="8" ry="5" fill="#22c55e" opacity="0.15"/>
+        </svg>
+        <div className="stencil-drips">
+          <span className="drip" style={{ left: '20%', height: '30px', animationDelay: '0s' }} />
+          <span className="drip" style={{ left: '75%', height: '45px', animationDelay: '0.5s' }} />
+        </div>
+      </div>
+
+      {/* Surveillance camera stencil - top right area */}
+      <div className="stencil-art top-[25%] right-[8%] w-28 h-20 opacity-70">
+        <svg viewBox="0 0 120 80" className="w-full h-full stencil-figure text-red-500">
+          {/* Mount */}
+          <rect x="5" y="5" width="15" height="30" fill="currentColor"/>
+          {/* Arm */}
+          <rect x="15" y="15" width="40" height="10" fill="currentColor"/>
+          {/* Camera body */}
+          <rect x="50" y="5" width="50" height="35" rx="3" fill="currentColor"/>
+          {/* Lens */}
+          <circle cx="85" cy="22" r="12" fill="#0a0a0a"/>
+          <circle cx="85" cy="22" r="8" fill="currentColor"/>
+          <circle cx="85" cy="22" r="4" fill="#0a0a0a"/>
+          {/* Recording light */}
+          <circle cx="58" cy="15" r="3" fill="#ef4444" className="pulse-danger"/>
+        </svg>
+        <div className="stencil-text text-red-500 text-xs mt-1 tracking-widest">
+          THEY WATCH
+        </div>
+      </div>
+
+      {/* "WE SEE YOU" stencil text - scattered */}
+      <div className="stencil-text-large absolute top-[45%] right-[3%] -rotate-90 text-emerald-500/40">
+        WE SEE YOU
+      </div>
+
+      {/* Rat stencil - classic banksy */}
+      <div className="stencil-art bottom-[8%] right-[25%] w-20 h-16 opacity-50">
+        <svg viewBox="0 0 100 70" className="w-full h-full stencil-figure">
+          {/* Rat body */}
+          <ellipse cx="45" cy="45" rx="30" ry="18" fill="currentColor"/>
+          {/* Head */}
+          <ellipse cx="80" cy="40" rx="15" ry="12" fill="currentColor"/>
+          {/* Ear */}
+          <circle cx="88" cy="30" r="6" fill="currentColor"/>
+          {/* Snout */}
+          <ellipse cx="95" cy="42" rx="5" ry="4" fill="currentColor"/>
+          {/* Tail */}
+          <path d="M15 45 Q0 30 5 15" stroke="currentColor" strokeWidth="4" fill="none"/>
+          {/* Legs */}
+          <rect x="30" y="58" width="5" height="10" fill="currentColor"/>
+          <rect x="50" y="58" width="5" height="10" fill="currentColor"/>
+          <rect x="70" y="50" width="5" height="12" fill="currentColor"/>
+          {/* Eye */}
+          <circle cx="82" cy="38" r="2" fill="#0a0a0a"/>
+        </svg>
+      </div>
+
+      {/* Anarchy A - subtle */}
+      <div className="stencil-art top-[60%] left-[3%] w-12 h-12 opacity-30">
+        <svg viewBox="0 0 50 50" className="w-full h-full stencil-figure text-red-500">
+          <circle cx="25" cy="25" r="22" stroke="currentColor" strokeWidth="3" fill="none"/>
+          <path d="M25 8 L12 42 M25 8 L38 42 M15 30 L35 30" stroke="currentColor" strokeWidth="3" fill="none"/>
+        </svg>
+      </div>
+
+      {/* "OBEY" crossed out */}
+      <div className="stencil-text-block absolute bottom-[35%] left-[2%] rotate-12">
+        <span className="stencil-word line-through decoration-red-500 decoration-4">OBEY</span>
+      </div>
+
+      {/* "QUESTION EVERYTHING" stencil */}
+      <div className="stencil-text-block absolute top-[8%] left-[30%] -rotate-3 text-amber-500/50">
+        <span className="stencil-word text-sm">QUESTION EVERYTHING</span>
+      </div>
+
+      {/* Paint splatter accents */}
+      <div className="paint-splatter top-[30%] left-[25%] bg-emerald-500/20" />
+      <div className="paint-splatter bottom-[25%] right-[30%] bg-red-500/15" />
+      <div className="paint-splatter top-[55%] right-[15%] bg-cyan-500/10" />
+
+      {/* Spray paint overspray texture */}
+      <div className="absolute inset-0 spray-texture pointer-events-none" />
+
+      {/* ============================================
+          ORIGINAL DAMAGE ELEMENTS
+          ============================================ */}
+
       {/* Bullet hole */}
       <div className="bullet-hole top-[20%] left-[15%]">
         <div className="bullet-cracks">

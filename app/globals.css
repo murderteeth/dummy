@@ -589,3 +589,135 @@ body {
   border-color: rgba(239, 68, 68, 0.5);
   box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
 }
+
+/* ============================================
+   STENCIL GRAFFITI
+   ============================================ */
+
+/* Stencil art container */
+.stencil-art {
+  position: absolute;
+  pointer-events: none;
+  filter: url(#stencil-texture);
+}
+
+/* Stencil figure base style */
+.stencil-figure {
+  color: #e4e4e7;
+  filter: 
+    drop-shadow(0 0 1px rgba(0, 0, 0, 0.8))
+    drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
+}
+
+/* Spray paint edge texture effect */
+.stencil-figure {
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 18 -7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
+}
+
+/* Paint drips */
+.stencil-drips {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 50px;
+}
+
+.drip {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(180deg, #e4e4e7 0%, transparent 100%);
+  border-radius: 0 0 2px 2px;
+  animation: drip-flow 4s ease-in-out infinite;
+}
+
+@keyframes drip-flow {
+  0%, 100% { 
+    opacity: 0.6;
+    transform: scaleY(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scaleY(1.1);
+  }
+}
+
+/* Stencil text styling */
+.stencil-text {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    2px 2px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.stencil-text-large {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  writing-mode: vertical-rl;
+  text-shadow: 
+    3px 3px 0 rgba(0, 0, 0, 0.5),
+    -1px -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.stencil-text-block {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.stencil-word {
+  display: inline-block;
+  padding: 4px 8px;
+  color: #e4e4e7;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 
+    2px 2px 0 rgba(0, 0, 0, 0.8),
+    -1px -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Paint splatter effect */
+.paint-splatter {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(20px);
+  pointer-events: none;
+  animation: splatter-pulse 5s ease-in-out infinite;
+}
+
+@keyframes splatter-pulse {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+/* Spray texture overlay */
+.spray-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='spray'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' result='noise'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 25 -12' in='noise'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23spray)'/%3E%3C/svg%3E");
+  opacity: 0.015;
+  mix-blend-mode: overlay;
+}
+
+/* Stencil hover effect - subtle glow */
+.stencil-art:hover .stencil-figure {
+  filter: 
+    drop-shadow(0 0 1px rgba(0, 0, 0, 0.8))
+    drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3))
+    drop-shadow(0 0 10px currentColor);
+  transition: filter 0.3s ease;
+}
