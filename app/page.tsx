@@ -21,11 +21,10 @@ export default function Home() {
           ============================================ */}
       
       <div className="graffiti-tag bottom-[18%] left-[8%] -rotate-6">
-        <span className="bubble-letter" style={{ '--hue': '320' } as React.CSSProperties}>U</span>
-        <span className="bubble-letter" style={{ '--hue': '280' } as React.CSSProperties}>R</span>
-        <span className="bubble-letter ml-4" style={{ '--hue': '180' } as React.CSSProperties}>M</span>
-        <span className="bubble-letter" style={{ '--hue': '140' } as React.CSSProperties}>O</span>
-        <span className="bubble-letter" style={{ '--hue': '60' } as React.CSSProperties}>M</span>
+        <span className="bubble-letter" style={{ '--hue': '320' } as React.CSSProperties}>R</span>
+        <span className="bubble-letter" style={{ '--hue': '280' } as React.CSSProperties}>E</span>
+        <span className="bubble-letter" style={{ '--hue': '180' } as React.CSSProperties}>K</span>
+        <span className="bubble-letter" style={{ '--hue': '60' } as React.CSSProperties}>T</span>
       </div>
 
       {/* ============================================
