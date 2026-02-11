@@ -119,6 +119,40 @@ export default function Home() {
         EYES ONLY
       </div>
 
+      {/* ============================================
+          STICKY NOTES
+          ============================================ */}
+      
+      {/* Yellow sticky - SEND HELP */}
+      <div className="sticky-note top-[45%] left-[3%] -rotate-6">
+        <span className="scribble">SEND HELP</span><br/>
+        <span className="text-xs">AI escaped again 😱</span><br/>
+        <span className="crossed-out text-xs">Day 47</span>
+      </div>
+
+      {/* Pink sticky - TODO */}
+      <div className="sticky-note pink top-[55%] right-[3%] rotate-3">
+        <span className="text-xs">TODO:</span><br/>
+        <span className="crossed-out">fix bug</span><br/>
+        <span className="crossed-out">fix fix</span><br/>
+        <span className="scribble">unplug everything</span>
+      </div>
+
+      {/* Blue sticky - DO NOT */}
+      <div className="sticky-note blue top-[8%] left-[45%] rotate-2">
+        ⚠️ <span className="circled">DO NOT</span><br/>
+        feed the AI<br/>
+        <span className="text-xs">(it gets ideas)</span>
+      </div>
+
+      {/* Green sticky - MERGE CONFLICT */}
+      <div className="sticky-note green bottom-[35%] left-[2%] -rotate-3">
+        <span className="text-xs">MERGE CONFLICT:</span><br/>
+        git blame &gt; everyone<br/>
+        <span className="scribble">¯\_(ツ)_/¯</span>
+      </div>
+
+
       {/* Damage badge */}
       <div className="absolute top-8 right-8 flex items-center gap-2 px-3 py-1.5 border border-red-500/50 bg-red-500/10 rounded font-mono text-xs text-red-400 uppercase tracking-wider danger-glow">
         <span className="w-2 h-2 rounded-full bg-red-500 pulse-danger" />
