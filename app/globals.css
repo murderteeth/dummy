@@ -757,3 +757,61 @@ body {
   opacity: 0.8;
   z-index: 21;
 }
+
+/* ============================================
+   CRASH TEST DUMMY PHOTO
+   ============================================ */
+
+.crash-dummy-photo {
+  position: absolute;
+  width: 160px;
+  height: 180px;
+  z-index: 15;
+  background: #f5f0e8;
+  padding: 8px 8px 32px 8px;
+  box-shadow:
+    4px 4px 12px rgba(0, 0, 0, 0.6),
+    0 0 1px rgba(0, 0, 0, 0.3);
+  opacity: 0.9;
+  transition: opacity 0.3s;
+}
+
+.crash-dummy-photo:hover {
+  opacity: 1;
+}
+
+.crash-dummy-photo .photo-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 200, 0.5);
+  border: 1px solid rgba(200, 200, 150, 0.3);
+  z-index: 16;
+}
+
+.crash-dummy-photo .photo-caption {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  font-weight: bold;
+  color: #c0392b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .crash-dummy-photo {
+    width: 100px;
+    height: 120px;
+    padding: 5px 5px 24px 5px;
+    bottom: 5% !important;
+    right: 5% !important;
+  }
+}

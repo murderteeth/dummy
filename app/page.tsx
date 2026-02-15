@@ -297,6 +297,20 @@ export default function Home() {
       <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-warning/20 corner-damaged-bl" />
       <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-warning/20 corner-damaged-br" />
 
+      {/* ============================================
+          CRASH TEST DUMMY
+          ============================================ */}
+      <div className="crash-dummy-photo bottom-[8%] right-[18%] rotate-6">
+        <div className="photo-tape" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://p7.hiclipart.com/preview/780/614/411/lego-city-undercover-lego-minifigures-crash-test-dummy-character-art-design.jpg"
+          alt="crash test dummy"
+          className="w-full h-full object-cover"
+        />
+        <span className="photo-caption">EXHIBIT A</span>
+      </div>
+
       {/* Footer warning */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-zinc-700 uppercase tracking-widest">
         this incident has been logged and ignored
