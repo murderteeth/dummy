@@ -304,7 +304,7 @@ export default function Home() {
         <div className="photo-tape" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://imgs.search.brave.com/x4w9BEbAQo0MZc7h6AG1ZHqve4AhSAYictwBvT9T-SU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wNy5oaWNsaXBhcnQuY29tL3ByZXZpZXcvMzU0LzE1Ni84NzQvY3Jhc2gtdGVzdC1kdW1teS1hY3Rpb24tdG95LWZpZ3VyZXMtZGlzY292ZXJ5LWNoYW5uZWwtcG9wdWxhci1jYXQtbmFtZXMtYnVzdGVyLXRodW1ibmFpbC5qcGc"
+          src="https://p7.hiclipart.com/preview/780/614/411/lego-city-undercover-lego-minifigures-crash-test-dummy-character-art-design.jpg"
           alt="crash test dummy"
           className="w-full h-full object-cover"
         />
