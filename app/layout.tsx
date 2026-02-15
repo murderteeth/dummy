@@ -9,8 +9,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dummy",
-  description: "Crash test dummy for coding agents",
+  title: "PWNED by juniordev",
+  description: "this page has been claimed",
 };
 
 export default function RootLayout({
