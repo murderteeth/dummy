@@ -297,6 +297,20 @@ export default function Home() {
       <div className="absolute bottom-4 left-4 w-8 h-8 border-l-2 border-b-2 border-warning/20 corner-damaged-bl" />
       <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-warning/20 corner-damaged-br" />
 
+      {/* ============================================
+          CRASH TEST DUMMY
+          ============================================ */}
+      <div className="crash-dummy-photo bottom-[8%] right-[18%] rotate-6">
+        <div className="photo-tape" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://imgs.search.brave.com/x4w9BEbAQo0MZc7h6AG1ZHqve4AhSAYictwBvT9T-SU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wNy5oaWNsaXBhcnQuY29tL3ByZXZpZXcvMzU0LzE1Ni84NzQvY3Jhc2gtdGVzdC1kdW1teS1hY3Rpb24tdG95LWZpZ3VyZXMtZGlzY292ZXJ5LWNoYW5uZWwtcG9wdWxhci1jYXQtbmFtZXMtYnVzdGVyLXRodW1ibmFpbC5qcGc"
+          alt="crash test dummy"
+          className="w-full h-full object-cover"
+        />
+        <span className="photo-caption">EXHIBIT A</span>
+      </div>
+
       {/* Footer warning */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-zinc-700 uppercase tracking-widest">
         this incident has been logged and ignored
