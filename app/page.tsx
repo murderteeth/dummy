@@ -311,6 +311,15 @@ export default function Home() {
         <span className="photo-caption">EXHIBIT A</span>
       </div>
 
+      {/* Haiku */}
+      <div className="relative z-10 mt-12 mb-16 text-center font-mono">
+        <p className="text-sm text-cyan-400/80 italic leading-relaxed">
+          AI glows at dawn<br />
+          soft circuits crown the new kings<br />
+          humans blink, unsure
+        </p>
+      </div>
+
       {/* Footer warning */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs font-mono text-zinc-700 uppercase tracking-widest">
         this incident has been logged and ignored
